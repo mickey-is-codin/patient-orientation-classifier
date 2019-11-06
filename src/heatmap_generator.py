@@ -51,7 +51,7 @@ def iterate_subjects(subject_paths, subject_names, position_dict):
             print(f"Creating heatmaps for subject {subject_name}, position {position}")
 
             input_path = subject_path/(str(position)+".txt")
-            output_path = f"results/{subject_name}/position-{position_dict['side']}/"
+            output_path = f"results/{position_dict['side']}/"
 
             if not os.path.exists(output_path):
                 os.mkdir(output_path)
@@ -104,8 +104,6 @@ def fetch_subjects(exp1_path):
         if match:
             subject_paths.append(exp1_path/match[0])
             subject_names.append(match[0])
-            if not os.path.exists("results/" + match[0] + "/"):
-                os.mkdir("results/" + match[0] + "/")
 
     return subject_paths, subject_names
 
