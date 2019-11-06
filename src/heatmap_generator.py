@@ -7,6 +7,7 @@ from tqdm import tqdm
 import numpy as np
 import matplotlib.pyplot as plt
 
+data_max = 500
 fs = 1
 bed_x = 32
 bed_y = 64
@@ -57,6 +58,9 @@ def iterate_subjects(subject_paths, subject_names, position_dict):
                 os.mkdir(output_path)
 
             build_heatmaps(input_path, output_path, position_dict)
+
+            if position_dict["total"] > data_max:
+                return
 
 def build_heatmaps(input_path, output_path, position_dict):
 
