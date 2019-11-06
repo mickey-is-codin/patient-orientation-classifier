@@ -5,3 +5,6 @@ RESULTS=mkdir -p results/
 maps : $(PY_SRC)
 	@$(RESULTS)
 	$(PY) $(PY_SRC)
+
+clean:
+	rm -rf results/*
