@@ -7,7 +7,7 @@ from tqdm import tqdm
 import numpy as np
 import matplotlib.pyplot as plt
 
-data_max = 500
+data_max = 2000
 fs = 1
 bed_x = 32
 bed_y = 64
