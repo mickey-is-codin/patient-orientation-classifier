@@ -16,7 +16,8 @@ def main():
 
     print("Generating heatmaps...\n")
 
-    exp1_path = Path("data/experiment-i/")
+    dataset_path = "a-pressure-map-dataset-for-in-bed-posture-classification-1.0.0"
+    exp1_path = Path(f"data/{dataset_path}/experiment-i/")
     subject_paths, subject_names  = fetch_subjects(exp1_path)
 
     supine_positions = {
