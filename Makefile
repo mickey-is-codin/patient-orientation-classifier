@@ -12,7 +12,7 @@ DOWN_ZIP=data/dataset.zip
 
 ZIP=orientation_dataset.zip
 
-all: download maps dataset
+all: download maps dataset data
 
 download:
 	@$(DATA)
@@ -26,6 +26,14 @@ maps : $(PY_SRC)
 
 dataset:
 	@cd $(RESULTS_DIR); zip -r $(ZIP) *; cd ..
+
+.PHONY: data
+data:
+	@mkdir -p $(DATA_DIR)orientation-dataset
+	@mv $(RESULTS_DIR)supine $(DATA_DIR)orientation-dataset
+	@mv $(RESULTS_DIR)right $(DATA_DIR)orientation-dataset
+	@mv $(RESULTS_DIR)left $(DATA_DIR)orientation-dataset
+	@mv $(RESULTS_DIR)$(ZIP) $(DATA_DIR)
 
 clean:
 	rm -rf results/*
