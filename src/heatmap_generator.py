@@ -50,7 +50,7 @@ def iterate_subjects(subject_paths, subject_names, position_dict):
     for subject_path, subject_name in zip(subject_paths, subject_names):
         for position in position_dict["positions"]:
 
-            print(f"Creating heatmaps for subject {subject_name}, position {position}")
+            print(f"Getting heatmaps from subject {subject_name}, position {position}")
 
             input_path = subject_path/(str(position)+".txt")
             output_path = f"results/{position_dict['side']}/"
